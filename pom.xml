@@ -1,0 +1,77 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>qrone</groupId>
+  <artifactId>Downloader</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>apk</packaging>
+  
+  <repositories>
+     <repository>
+        <id>qrone</id>
+        <url>http://mvn.qrone.org/</url>
+    </repository>
+  </repositories>
+  
+  <dependencies>
+  	<dependency>
+  		<groupId>com.actionbarsherlock</groupId>
+  		<artifactId>library</artifactId>
+  		<version>4.0.1</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>com.google.android</groupId>
+  		<artifactId>android</artifactId>
+  		<version>4.0.1.2</version>
+  	</dependency>
+  </dependencies>
+  
+	<build>
+		<sourceDirectory>src</sourceDirectory>
+
+		<plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
+            
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<configuration>
+					<configLocation>${project.basedir}/checkstyle.xml</configLocation>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>verify</phase>
+						<goals>
+							<goal>checkstyle</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>com.jayway.maven.plugins.android.generation2</groupId>
+				<artifactId>android-maven-plugin</artifactId>
+				<version>3.1.1</version>
+                <configuration>
+                    <sdk>
+                        <platform>4.0.3</platform>
+                    </sdk>
+                </configuration>
+                <extensions>true</extensions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
