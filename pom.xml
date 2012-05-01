@@ -14,14 +14,15 @@
   
   <dependencies>
   	<dependency>
-  		<groupId>com.actionbarsherlock</groupId>
-  		<artifactId>library</artifactId>
-  		<version>4.0.1</version>
-  	</dependency>
-  	<dependency>
   		<groupId>com.google.android</groupId>
   		<artifactId>android</artifactId>
   		<version>4.0.1.2</version>
+  		<scope>provided</scope>
+  	</dependency>
+  	<dependency>
+  		<groupId>qrone</groupId>
+  		<artifactId>qrone-util</artifactId>
+  		<version>0.1</version>
   	</dependency>
   </dependencies>
   
